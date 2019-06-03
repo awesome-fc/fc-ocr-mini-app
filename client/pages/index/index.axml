@@ -1,0 +1,12 @@
+<view class="page-add-image">
+
+  <view class="add-image">
+    <view class="attach-image">
+      <view a:if="{{ imageUrl }}">
+        <button class="image-button" hover-class="none" onTap="attach">重新上传图片</button>
+        <image id = "output" class="attached-image" mode="widthFix" src="{{ imageUrl }}" />
+      </view>
+      <button a:else class="image-button" hover-class="none" onTap="attach">上传图片</button>
+    </view>
+  </view>
+</view>

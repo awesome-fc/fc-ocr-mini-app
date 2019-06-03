@@ -1,0 +1,52 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  test:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Policies:
+        - AliyunOSSFullAccess # Managed Policy
+        - AliyunLogFullAccess # Managed Policy
+      LogConfig:
+        Project: func-func-log
+        Logstore: func-test
+
+    ocr_extract:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: cloud_func_ocr.process_image
+        Runtime: python2.7
+        Timeout: 60
+        MemorySize: 512
+        CodeUri: './'
+
+    upload_image:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: cloud_func_ocr.upload_ocr_image
+        Runtime: python2.7
+        Timeout: 60
+        MemorySize: 512
+        CodeUri: './'
+      Events:
+        http-trigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods: ['GET', 'POST', 'PUT']
+      
+    get_ocr_result:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: cloud_func_ocr.get_ocr_result
+        Runtime: python2.7
+        Timeout: 60
+        MemorySize: 512
+        CodeUri: './'
+      Events:
+        http-trigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods: ['GET', 'POST', 'PUT']
+

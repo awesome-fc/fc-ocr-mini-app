@@ -1,0 +1,63 @@
+.page-add-image {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100vh;
+  font-size: 32rpx;
+  font-weight: 300;
+  padding: 0 40rpx;
+}
+
+.footer {
+  flex-shrink: 0;
+  padding: 50rpx 0;
+  font-size: 48rpx;
+  text-align: center;
+}
+
+.add-button {
+  border-radius: 100rpx;
+  border-color: #2E94F9;
+  color: #2E94F9;
+  height: 196rpx;
+  line-height: 96rpx;
+  background: #FFF;
+}
+
+.add-image {
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80rpx
+}
+
+.attach-image {
+  padding: 10rpx;
+}
+
+.attached-image {
+  display: block;
+  width: 100%;
+  max-height: 480rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.image-button {
+  display: block;
+  margin-top: 16rpx;
+  font-size: 32rpx;
+  background: none;
+  color: #2E94F9;
+  border: none;
+  text-align: left;
+}
+
+.input-name {
+  display: block;
+  font-size: 32rpx;
+  padding: 10rpx;
+  background: none;
+  border:none;
+  border-bottom: 1px solid #2E94F9;
+}
