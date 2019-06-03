@@ -8,6 +8,8 @@
 
   - 借助函数计算和其他云端服务的集成，您只需要编写少量代码就可以串联多个服务完成复杂的功能，大大提高开发效率
 
+![image](http://git.cn-hangzhou.oss-cdn.aliyun-inc.com/uploads/serverless/lambda/90b4d97495902c1dd5bd284d78d8fe89/image.png)
+
 
 
 - 优点与劣势
