@@ -1,7 +1,7 @@
 # 在支付宝小程序上使用函数计算实现OCR
 
 ## 介绍
-A OCR demo on alipay mini program using alicloud function compute as backend. 
+A OCR demo on alipay mini program using alicloud function compute as backend.
 
 1. Upload image to OSS bucket via alipay miniprogram client
 2. A function is triggered and process image uploaded, extract OCR result and save the result in a bucket
