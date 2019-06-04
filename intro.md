@@ -23,7 +23,7 @@
 
 - 应用结构：
 
-    ![fc_ocr_flow](http://git.cn-hangzhou.oss-cdn.aliyun-inc.com/uploads/serverless/admin-service/2e6860df540d8e8e5e77f9e9e70b1cea/fc_ocr_flow.png)
+    ![fc_ocr_flow](http://git.cn-hangzhou.oss-cdn.aliyun-inc.com/uploads/serverless/admin-service/be8891a29c05c250112afa55fd50a6b8/fc_ocr_flow.png)
 
     1. 在小程序客户端上传图片，`http trigger`触发`upload_ocr_image`函数，函数接收文件上传到OSS
 
@@ -34,7 +34,7 @@
     4. 小程序客户端请求识别结果，`http trigger`触发`get_ocr_result`函数，得到结果
  
 
-## 使用方法
+## 开发步骤
 
 ### 1. 开发环境准备工作
 
@@ -164,7 +164,8 @@
 
 
 ### 3. 编写支付宝小程序
-OCR识别的代码：
+OCR识别的代码：其中`<upload-image-endpoint>` 和`<get-result-endpoint>`分别为`upload_ocr_image`和`get_ocr_result`两个函数的触发地址，可以在函数控制台查看
+
 ```JavaScript
 // 选择并上传图片
   attach() {
@@ -209,7 +210,9 @@ OCR识别的代码：
 ```
 
 ### 4. 部署函数
-- 编写函数部署yaml文件：
+- [使用Fun工具部署函数](https://github.com/aliyun/fun?spm=a2c4g.11186623.2.17.16e128feZyVwTV)，编写函数部署yaml文件，更多模版文件编写信息可查看[Serverless Application Model
+](https://github.com/aliyun/fun/blob/master/docs/specs/2018-04-03-zh-cn.md)
+
 
     ```yaml
     ROSTemplateFormatVersion: '2015-09-01'
@@ -268,7 +271,7 @@ OCR识别的代码：
 
 - 更改配置：替换python代码中的`<>`中的内容为你自己的相关配置
 
-- 使用[Fun工具](https://help.aliyun.com/document_detail/64204.html) 进行函数部署，命令行运行`$ fun deploy`
+- 进入代码所在目录，命令行运行`$ fun deploy`
 
 
 ### 5. 测试
