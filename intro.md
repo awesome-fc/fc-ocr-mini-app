@@ -23,7 +23,7 @@
 
 - 应用结构：
 
-    ![workflow](./doc/fc_ocr_flow.png)
+    ![fc_ocr_flow](http://git.cn-hangzhou.oss-cdn.aliyun-inc.com/uploads/serverless/admin-service/2e6860df540d8e8e5e77f9e9e70b1cea/fc_ocr_flow.png)
 
     1. 在小程序客户端上传图片，`http trigger`触发`upload_ocr_image`函数，函数接收文件上传到OSS
 
