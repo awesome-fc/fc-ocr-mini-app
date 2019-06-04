@@ -1,6 +1,6 @@
-# 10分钟使用阿里云函数计算构建你的OCR智能识别小程序
+# 10分钟使用阿里云函数计算构建你的OCR智能识别云端小程序
 
-本文介绍使用支付宝小程序与函数计算的完成OCR光学字符识别的例子，十分钟快速开发一个轻量级可扩展应用
+本文介绍使用支付宝小程序与函数计算的完成OCR光学字符识别的例子，十分钟快速开发一个轻量级可扩展云端小程序
 
 
 ## 背景介绍
@@ -122,14 +122,11 @@
         text_bucket = oss2.Bucket(auth, endpoint, ocr_text_bucket)
         text_bucket.put_object(obj_key + '_ocr.txt', ' '.join(detect_word_list).encode(encoding='UTF8'))
         return 'Processed image file success, text can be seen in the text bucket'
-   ```
-
-
-- 编写Vision Api 接口：
-   - 直接请求阿里云OCR服务接口:
-
-   ```Python
+    
     def detect_text(image_data):
+        '''
+        请求阿里云OCR Api
+        '''
         encoded_image = base64.b64encode(image_data)
         detect_word_list = text_detect_api(encoded_image)
         logger.info("Detect word list : " + ' '.join(detect_word_list))
@@ -158,7 +155,6 @@
         for info in words_info:
             word_list.append(info['word'].encode('utf8'))
         return word_list
-   
    ```
 
 
