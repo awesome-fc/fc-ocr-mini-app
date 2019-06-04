@@ -16,3 +16,5 @@ A OCR demo on alipay mini program using alicloud function compute as backend.
 4. 替换python代码中的`<>`中的内容为你配置，然后`fun deploy`
 5. 运行支付宝小程序client端，上传图片，得到识别结果
 
+
+更多介绍请查看[intro.md](http://gitlab.alibaba-inc.com/awesome-fc/fc-ocr/blob/master/intro.md)

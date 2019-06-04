@@ -25,8 +25,8 @@ logger = logging.getLogger()
 ocr_image_bucket = '<your_ocr_image_bucket_name>'  
 ocr_text_bucket = '<your_ocr_text_bucket_name>'   
 oss_endpoint = '<your_oss_endpoint>'
-oss_secret_id = '<your_secret_id>'   
-oss_secret_key = '<your_secret_key>'  
+secret_id = '<your_secret_id>'   
+secret_key = '<your_secret_key>'  
 ocr_api_appcode = '<your_ocr_api_appcode>' 
 
 ocr_api_url = 'https://ocrapi-advanced.taobao.com/ocrservice/advanced'
@@ -92,7 +92,7 @@ def upload_ocr_image(environ, start_response):
         content = cgi.FieldStorage(fp=environ['wsgi.input'], environ=environ, keep_blank_values=True)
         for key in content.keys():
             image_binary = content.getvalue(key)
-            auth = oss2.Auth(oss_secret_id, oss_secret_key)
+            auth = oss2.Auth(secret_id, secret_key)
             bucket = oss2.Bucket(auth, oss_endpoint, ocr_image_bucket)
             bucket.put_object(key, image_binary)
         status = '200 OK'
@@ -111,7 +111,7 @@ def get_ocr_result(environ, start_response):
         request_body_size = int(environ.get('CONTENT_LENGTH', 0))
         request_body = environ['wsgi.input'].read(request_body_size)
         res_json = json.loads(request_body)
-        auth = oss2.Auth(oss_secret_id, oss_secret_key)
+        auth = oss2.Auth(secret_id, secret_key)
         bucket = oss2.Bucket(auth, oss_endpoint, ocr_text_bucket)
         ocr_res = bucket.get_object(str(res_json['key'])).read()
         status = '200 OK'
