@@ -54,6 +54,7 @@
 - 编写http请求函数：
 
     - 函数计算可以直接使用HTTP trigger触发，你可以快速编写任何接口，这里我们需要一个图片上传的接口：
+
     ```Python
     def upload_ocr_image(environ, start_response):
         '''
@@ -75,7 +76,8 @@
 
 
     ```
-    和一个请求图片OCR结果的函数：
+    - 和一个请求图片OCR结果的函数：
+
 
     ```Python
     def get_ocr_result(environ, start_response):
@@ -100,6 +102,7 @@
 
 - 编写OCR处理函数：
    - 使用OSS trigger，当有图片上传的时候触发OCR函数：
+
    ```Python
    def process_image(event, context):
         '''
@@ -124,13 +127,13 @@
 
 - 编写Vision Api 接口：
    - 直接请求阿里云OCR服务接口:
+
    ```Python
     def detect_text(image_data):
         encoded_image = base64.b64encode(image_data)
         detect_word_list = text_detect_api(encoded_image)
         logger.info("Detect word list : " + ' '.join(detect_word_list))
         return detect_word_list
-
 
     def text_detect_api(encodestr):
         method = 'POST'
