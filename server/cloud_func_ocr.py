@@ -25,8 +25,8 @@ logger = logging.getLogger()
 ocr_image_bucket = '<your_ocr_image_bucket_name>'  
 ocr_text_bucket = '<your_ocr_text_bucket_name>'   
 oss_endpoint = '<your_oss_endpoint>'
-oss_secret_id = '<your_oss_secret_id>'   
-oss_secret_key = '<your_oss_secret_key>'  
+oss_secret_id = '<your_secret_id>'   
+oss_secret_key = '<your_secret_key>'  
 ocr_api_appcode = '<your_ocr_api_appcode>' 
 
 ocr_api_url = 'https://ocrapi-advanced.taobao.com/ocrservice/advanced'

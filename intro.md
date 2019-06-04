@@ -265,7 +265,7 @@ OCR识别的代码：其中`<upload-image-endpoint>` 和`<get-result-endpoint>`�
 
     ```
 
-- 更改配置：替换python代码中的`<>`中的内容为你自己的相关配置
+- 更改配置：替换`cloud_func_ocr.py`代码中的`<>`中的内容为你自己的相关配置
 
 - 进入代码所在目录，命令行运行`$ fun deploy`
 
