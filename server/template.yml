@@ -1,15 +1,11 @@
 ROSTemplateFormatVersion: '2015-09-01'
 Transform: 'Aliyun::Serverless-2018-04-03'
 Resources:
-  test:
+  ocr_service:
     Type: 'Aliyun::Serverless::Service'
     Properties:
       Policies:
         - AliyunOSSFullAccess # Managed Policy
-        - AliyunLogFullAccess # Managed Policy
-      LogConfig:
-        Project: func-func-log
-        Logstore: func-test
 
     ocr_extract:
       Type: 'Aliyun::Serverless::Function'
