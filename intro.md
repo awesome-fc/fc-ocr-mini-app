@@ -23,7 +23,7 @@
 
 - 应用结构：
 
-    ![fc_ocr_flow](http://git.cn-hangzhou.oss-cdn.aliyun-inc.com/uploads/serverless/admin-service/be8891a29c05c250112afa55fd50a6b8/fc_ocr_flow.png)
+    ![fc_ocr_flow](https://img.alicdn.com/tfs/TB1Bx0Qv7L0gK0jSZFtXXXQCXXa-842-337.png)
 
     1. 在小程序客户端上传图片，`http trigger`触发`upload_ocr_image`函数，函数接收文件上传到OSS
 
@@ -273,7 +273,7 @@ OCR识别的代码：其中`<upload-image-endpoint>` 和`<get-result-endpoint>`�
 ### 5. 测试
 运行小程序模拟器，可以上传一张图片，得到OCR识别结果
 
-![img2](http://git.cn-hangzhou.oss-cdn.aliyun-inc.com/uploads/serverless/fc-canary/00bf595ce7e7092eae49b0cd765cca7a/img2)
+![img2](https://img.alicdn.com/tfs/TB14EJTv7T2gK0jSZPcXXcKkpXa-377-707.png)
 
 
 

@@ -6,6 +6,7 @@ Resources:
     Properties:
       Policies:
         - AliyunOSSFullAccess # Managed Policy
+        - AliyunRAMFullAccess
 
     ocr_extract:
       Type: 'Aliyun::Serverless::Function'
