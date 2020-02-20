@@ -1,12 +1,10 @@
 ROSTemplateFormatVersion: '2015-09-01'
 Transform: 'Aliyun::Serverless-2018-04-03'
 Resources:
-  ocr_service:
+  fc-ocr:
     Type: 'Aliyun::Serverless::Service'
     Properties:
-      Policies:
-        - AliyunOSSFullAccess # Managed Policy
-        - AliyunRAMFullAccess
+      Description: This is fc-ocr service
 
     ocr_extract:
       Type: 'Aliyun::Serverless::Function'
